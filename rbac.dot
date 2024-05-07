@@ -1,0 +1,3218 @@
+digraph  {
+	subgraph cluster_s1 {
+		label="kube-public";style="rounded,dashed";
+		n3[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="kubeadm:bootstrap-signer-clusterinfo",penwidth="1.0",shape="oval",style="filled"];
+		n7[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:bootstrap-signer",penwidth="1.0",shape="oval",style="filled"];
+		n2[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="kubeadm:bootstrap-signer-clusterinfo",penwidth="1.0",shape="oval",style="filled"];
+		n6[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:bootstrap-signer",penwidth="1.0",shape="oval",style="filled"];
+		n4[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">cluster-info</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n8[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">cluster-info</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n3->n4;
+		n7->n8;
+		n2->n3;
+		n6->n7;
+		
+	}
+	subgraph cluster_s9 {
+		label="kube-system";style="rounded,dashed";
+		n175[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="attachdetach-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n10[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="bootstrap-signer\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n86[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="calico-kube-controllers\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n54[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="canal\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n66[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="certificate-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n23[color="#e33a1f",fillcolor="#1b60db",fontcolor="#030303",fontname="Poppins 100 normal",label="cloud-provider\n(ServiceAccount)",margin="0.22,0.11",penwidth="2.0",shape="box",style="dotted"];
+		n197[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="clusterrole-aggregation-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n78[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="coredns\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n58[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="cronjob-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n241[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="daemon-set-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n108[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="deployment-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n257[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="disruption-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n218[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="endpoint-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n70[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="endpointslice-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n222[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="endpointslicemirroring-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n125[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="ephemeral-volume-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n112[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="expand-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n201[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="generic-garbage-collector\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n129[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="horizontal-pod-autoscaler\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n93[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="job-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n27[color="#e33a1f",fillcolor="#1b60db",fontcolor="#030303",fontname="Poppins 100 normal",label="kube-controller-manager\n(ServiceAccount)",margin="0.22,0.11",penwidth="2.0",shape="box",style="dotted"];
+		n233[color="#e33a1f",fillcolor="#1b60db",fontcolor="#030303",fontname="Poppins 100 normal",label="kube-dns\n(ServiceAccount)",margin="0.22,0.11",penwidth="2.0",shape="box",style="dotted"];
+		n207[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="kube-proxy\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n19[color="#e33a1f",fillcolor="#1b60db",fontcolor="#030303",fontname="Poppins 100 normal",label="kube-scheduler\n(ServiceAccount)",margin="0.22,0.11",penwidth="2.0",shape="box",style="dotted"];
+		n159[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="legacy-service-account-token-cleaner\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n74[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="namespace-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n163[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="node-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n179[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="persistent-volume-binder\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n82[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="pod-garbage-collector\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n97[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="pv-protection-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n133[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="pvc-protection-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n245[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="replicaset-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n183[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="replication-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n147[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="resourcequota-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n151[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="root-ca-cert-publisher\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n155[color="#e33a1f",fillcolor="#1b60db",fontcolor="#030303",fontname="Poppins 100 normal",label="route-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="2.0",shape="box",style="dotted"];
+		n249[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="service-account-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n226[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="service-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n140[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="statefulset-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n34[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="token-cleaner\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n253[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="ttl-after-finished-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n205[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="ttl-controller\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n12[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="extension-apiserver-authentication-reader",penwidth="1.0",shape="oval",style="filled"];
+		n36[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="kube-proxy",penwidth="1.0",shape="oval",style="filled"];
+		n40[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="kubeadm:kubelet-config",penwidth="1.0",shape="oval",style="filled"];
+		n44[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="kubeadm:nodes-kubeadm-config",penwidth="1.0",shape="oval",style="filled"];
+		n25[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="system::leader-locking-kube-controller-manager",penwidth="1.0",shape="oval",style="filled"];
+		n17[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="system::leader-locking-kube-scheduler",penwidth="1.0",shape="oval",style="filled"];
+		n29[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:bootstrap-signer",penwidth="1.0",shape="oval",style="filled"];
+		n21[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:cloud-provider",penwidth="1.0",shape="oval",style="filled"];
+		n32[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:token-cleaner",penwidth="1.0",shape="oval",style="filled"];
+		n35[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="kube-proxy",penwidth="1.0",shape="oval",style="filled"];
+		n39[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="kubeadm:kubelet-config",penwidth="1.0",shape="oval",style="filled"];
+		n43[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="kubeadm:nodes-kubeadm-config",penwidth="1.0",shape="oval",style="filled"];
+		n11[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="system::extension-apiserver-authentication-reader",penwidth="1.0",shape="oval",style="filled"];
+		n24[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="system::leader-locking-kube-controller-manager",penwidth="1.0",shape="oval",style="filled"];
+		n16[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="system::leader-locking-kube-scheduler",penwidth="1.0",shape="oval",style="filled"];
+		n28[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:bootstrap-signer",penwidth="1.0",shape="oval",style="filled"];
+		n20[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:cloud-provider",penwidth="1.0",shape="oval",style="filled"];
+		n31[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="system:controller:token-cleaner",penwidth="1.0",shape="oval",style="filled"];
+		n13[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">extension-apiserver-authentication</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n37[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">kube-proxy</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n41[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">kubelet-config</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n45[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">kubeadm-config</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n26[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">*</td>
+		<td align="left">watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">kube-controller-manager</td>
+		<td align="left">get,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n18[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">*</td>
+		<td align="left">watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">kube-scheduler</td>
+		<td align="left">get,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n30[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n22[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">*</td>
+		<td align="left">create,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n33[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets</td>
+		<td align="left">*</td>
+		<td align="left">delete,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n10->n28[dir="back"];
+		n23->n20[dir="back"];
+		n27->n24[dir="back"];
+		n19->n16[dir="back"];
+		n34->n31[dir="back"];
+		n12->n13;
+		n36->n37;
+		n40->n41;
+		n44->n45;
+		n25->n26;
+		n17->n18;
+		n29->n30;
+		n21->n22;
+		n32->n33;
+		n35->n36;
+		n39->n40;
+		n43->n44;
+		n11->n12;
+		n24->n25;
+		n16->n17;
+		n28->n29;
+		n20->n21;
+		n31->n32;
+		
+	}
+	subgraph cluster_s46 {
+		label="kubernetes-dashboard";style="rounded,dashed";
+		n50[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="kubernetes-dashboard\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		n48[color="#01080a",fillcolor="#17b87e",fontcolor="white",fontname="Poppins 100 normal",label="kubernetes-dashboard",penwidth="1.0",shape="oval",style="filled"];
+		n47[color="#01080a",fillcolor="#00994c",fontcolor="white",fontname="Poppins 100 normal",label="kubernetes-dashboard",penwidth="1.0",shape="oval",style="filled"];
+		n49[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets</td>
+		<td align="left">kubernetes-dashboard-key-holder,kubernetes-dashboard-certs,kubernetes-dashboard-csrf</td>
+		<td align="left">get,update,delete</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">kubernetes-dashboard-settings</td>
+		<td align="left">get,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">services</td>
+		<td align="left">heapster,dashboard-metrics-scraper</td>
+		<td align="left">proxy</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">services/proxy</td>
+		<td align="left">heapster,http:heapster:,https:heapster:,dashboard-metrics-scraper,http:dashboard-metrics-scraper</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+		n50->n47[dir="back"];
+		n48->n49;
+		n47->n48;
+		
+	}
+	subgraph cluster_s120 {
+		label="local-path-storage";style="rounded,dashed";
+		n121[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="local-path-provisioner-service-account\n(ServiceAccount)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+		
+	}
+	fontname="Poppins 100 normal";fontsize="12.00";newrank="true";
+	n165[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="kubeadm:cluster-admins\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n62[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:authenticated\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n38[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:bootstrappers:kubeadm:default-node-token\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n116[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:masters\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n101[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:monitoring\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n42[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:nodes\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n237[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:serviceaccounts\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n214[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:unauthenticated\n(Group)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n5[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:anonymous\n(User)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n14[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:kube-controller-manager\n(User)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n190[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:kube-proxy\n(User)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n15[color="#01040a",fillcolor="#1b60db",fontcolor="white",fontname="Poppins 100 normal",label="system:kube-scheduler\n(User)",margin="0.22,0.11",penwidth="1.0",shape="box",style="filled"];
+	n84[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="calico-kube-controllers",penwidth="1.0",shape="oval",style="filled"];
+	n185[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="calico-node",penwidth="1.0",shape="oval",style="filled"];
+	n114[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="cluster-admin",penwidth="1.0",shape="oval",style="filled"];
+	n52[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="flannel",penwidth="1.0",shape="oval",style="filled"];
+	n135[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubeadm:get-nodes",penwidth="1.0",shape="oval",style="filled"];
+	n103[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubernetes-dashboard",penwidth="1.0",shape="oval",style="filled"];
+	n118[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="local-path-provisioner-role",penwidth="1.0",shape="oval",style="filled"];
+	n192[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:basic-user",penwidth="1.0",shape="oval",style="filled"];
+	n167[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:certificates.k8s.io:certificatesigningrequests:nodeclient",penwidth="1.0",shape="oval",style="filled"];
+	n170[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:certificates.k8s.io:certificatesigningrequests:selfnodeclient",penwidth="1.0",shape="oval",style="filled"];
+	n173[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:attachdetach-controller",penwidth="1.0",shape="oval",style="filled"];
+	n64[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:certificate-controller",penwidth="1.0",shape="oval",style="filled"];
+	n195[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:clusterrole-aggregation-controller",penwidth="1.0",shape="oval",style="filled"];
+	n56[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:cronjob-controller",penwidth="1.0",shape="oval",style="filled"];
+	n239[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:daemon-set-controller",penwidth="1.0",shape="oval",style="filled"];
+	n106[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:deployment-controller",penwidth="1.0",shape="oval",style="filled"];
+	n255[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:disruption-controller",penwidth="1.0",shape="oval",style="filled"];
+	n216[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:endpoint-controller",penwidth="1.0",shape="oval",style="filled"];
+	n68[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:endpointslice-controller",penwidth="1.0",shape="oval",style="filled"];
+	n220[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:endpointslicemirroring-controller",penwidth="1.0",shape="oval",style="filled"];
+	n123[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:ephemeral-volume-controller",penwidth="1.0",shape="oval",style="filled"];
+	n110[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:expand-controller",penwidth="1.0",shape="oval",style="filled"];
+	n199[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:generic-garbage-collector",penwidth="1.0",shape="oval",style="filled"];
+	n127[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:horizontal-pod-autoscaler",penwidth="1.0",shape="oval",style="filled"];
+	n91[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:job-controller",penwidth="1.0",shape="oval",style="filled"];
+	n157[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:legacy-service-account-token-cleaner",penwidth="1.0",shape="oval",style="filled"];
+	n72[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:namespace-controller",penwidth="1.0",shape="oval",style="filled"];
+	n161[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:node-controller",penwidth="1.0",shape="oval",style="filled"];
+	n177[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:persistent-volume-binder",penwidth="1.0",shape="oval",style="filled"];
+	n80[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:pod-garbage-collector",penwidth="1.0",shape="oval",style="filled"];
+	n95[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:pv-protection-controller",penwidth="1.0",shape="oval",style="filled"];
+	n131[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:pvc-protection-controller",penwidth="1.0",shape="oval",style="filled"];
+	n243[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:replicaset-controller",penwidth="1.0",shape="oval",style="filled"];
+	n181[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:replication-controller",penwidth="1.0",shape="oval",style="filled"];
+	n145[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:resourcequota-controller",penwidth="1.0",shape="oval",style="filled"];
+	n149[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:root-ca-cert-publisher",penwidth="1.0",shape="oval",style="filled"];
+	n153[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:route-controller",penwidth="1.0",shape="oval",style="filled"];
+	n247[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:service-account-controller",penwidth="1.0",shape="oval",style="filled"];
+	n224[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:service-controller",penwidth="1.0",shape="oval",style="filled"];
+	n138[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:statefulset-controller",penwidth="1.0",shape="oval",style="filled"];
+	n251[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:ttl-after-finished-controller",penwidth="1.0",shape="oval",style="filled"];
+	n203[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:ttl-controller",penwidth="1.0",shape="oval",style="filled"];
+	n76[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:coredns",penwidth="1.0",shape="oval",style="filled"];
+	n60[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:discovery",penwidth="1.0",shape="oval",style="filled"];
+	n228[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:kube-controller-manager",penwidth="1.0",shape="oval",style="filled"];
+	n231[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:kube-dns",penwidth="1.0",shape="oval",style="filled"];
+	n209[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:kube-scheduler",penwidth="1.0",shape="oval",style="filled"];
+	n99[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:monitoring",penwidth="1.0",shape="oval",style="filled"];
+	n88[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:node-bootstrapper",penwidth="1.0",shape="oval",style="filled"];
+	n188[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:node-proxier",penwidth="1.0",shape="oval",style="filled"];
+	n212[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:public-info-viewer",penwidth="1.0",shape="oval",style="filled"];
+	n235[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:service-account-issuer-discovery",penwidth="1.0",shape="oval",style="filled"];
+	n142[color="#01080a",fillcolor="#006666",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:volume-scheduler",penwidth="1.0",shape="oval",style="filled"];
+	n83[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="calico-kube-controllers",penwidth="1.0",shape="oval",style="filled"];
+	n184[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="canal-calico",penwidth="1.0",shape="oval",style="filled"];
+	n51[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="canal-flannel",penwidth="1.0",shape="oval",style="filled"];
+	n113[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="cluster-admin",penwidth="1.0",shape="oval",style="filled"];
+	n164[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubeadm:cluster-admins",penwidth="1.0",shape="oval",style="filled"];
+	n134[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubeadm:get-nodes",penwidth="1.0",shape="oval",style="filled"];
+	n87[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubeadm:kubelet-bootstrap",penwidth="1.0",shape="oval",style="filled"];
+	n166[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubeadm:node-autoapprove-bootstrap",penwidth="1.0",shape="oval",style="filled"];
+	n169[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubeadm:node-autoapprove-certificate-rotation",penwidth="1.0",shape="oval",style="filled"];
+	n206[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubeadm:node-proxier",penwidth="1.0",shape="oval",style="filled"];
+	n102[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="kubernetes-dashboard",penwidth="1.0",shape="oval",style="filled"];
+	n117[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="local-path-provisioner-bind",penwidth="1.0",shape="oval",style="filled"];
+	n191[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:basic-user",penwidth="1.0",shape="oval",style="filled"];
+	n172[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:attachdetach-controller",penwidth="1.0",shape="oval",style="filled"];
+	n63[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:certificate-controller",penwidth="1.0",shape="oval",style="filled"];
+	n194[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:clusterrole-aggregation-controller",penwidth="1.0",shape="oval",style="filled"];
+	n55[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:cronjob-controller",penwidth="1.0",shape="oval",style="filled"];
+	n238[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:daemon-set-controller",penwidth="1.0",shape="oval",style="filled"];
+	n105[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:deployment-controller",penwidth="1.0",shape="oval",style="filled"];
+	n254[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:disruption-controller",penwidth="1.0",shape="oval",style="filled"];
+	n215[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:endpoint-controller",penwidth="1.0",shape="oval",style="filled"];
+	n67[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:endpointslice-controller",penwidth="1.0",shape="oval",style="filled"];
+	n219[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:endpointslicemirroring-controller",penwidth="1.0",shape="oval",style="filled"];
+	n122[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:ephemeral-volume-controller",penwidth="1.0",shape="oval",style="filled"];
+	n109[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:expand-controller",penwidth="1.0",shape="oval",style="filled"];
+	n198[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:generic-garbage-collector",penwidth="1.0",shape="oval",style="filled"];
+	n126[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:horizontal-pod-autoscaler",penwidth="1.0",shape="oval",style="filled"];
+	n90[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:job-controller",penwidth="1.0",shape="oval",style="filled"];
+	n156[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:legacy-service-account-token-cleaner",penwidth="1.0",shape="oval",style="filled"];
+	n71[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:namespace-controller",penwidth="1.0",shape="oval",style="filled"];
+	n160[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:node-controller",penwidth="1.0",shape="oval",style="filled"];
+	n176[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:persistent-volume-binder",penwidth="1.0",shape="oval",style="filled"];
+	n79[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:pod-garbage-collector",penwidth="1.0",shape="oval",style="filled"];
+	n94[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:pv-protection-controller",penwidth="1.0",shape="oval",style="filled"];
+	n130[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:pvc-protection-controller",penwidth="1.0",shape="oval",style="filled"];
+	n242[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:replicaset-controller",penwidth="1.0",shape="oval",style="filled"];
+	n180[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:replication-controller",penwidth="1.0",shape="oval",style="filled"];
+	n144[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:resourcequota-controller",penwidth="1.0",shape="oval",style="filled"];
+	n148[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:root-ca-cert-publisher",penwidth="1.0",shape="oval",style="filled"];
+	n152[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:route-controller",penwidth="1.0",shape="oval",style="filled"];
+	n246[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:service-account-controller",penwidth="1.0",shape="oval",style="filled"];
+	n223[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:service-controller",penwidth="1.0",shape="oval",style="filled"];
+	n137[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:statefulset-controller",penwidth="1.0",shape="oval",style="filled"];
+	n250[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:ttl-after-finished-controller",penwidth="1.0",shape="oval",style="filled"];
+	n202[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:controller:ttl-controller",penwidth="1.0",shape="oval",style="filled"];
+	n75[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:coredns",penwidth="1.0",shape="oval",style="filled"];
+	n59[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:discovery",penwidth="1.0",shape="oval",style="filled"];
+	n227[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:kube-controller-manager",penwidth="1.0",shape="oval",style="filled"];
+	n230[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:kube-dns",penwidth="1.0",shape="oval",style="filled"];
+	n208[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:kube-scheduler",penwidth="1.0",shape="oval",style="filled"];
+	n98[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:monitoring",penwidth="1.0",shape="oval",style="filled"];
+	n187[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:node-proxier",penwidth="1.0",shape="oval",style="filled"];
+	n211[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:public-info-viewer",penwidth="1.0",shape="oval",style="filled"];
+	n234[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:service-account-issuer-discovery",penwidth="1.0",shape="oval",style="filled"];
+	n141[color="#01080a",fillcolor="#006633",fontcolor="#f4f4f4",fontname="Poppins 100 normal",label="system:volume-scheduler",penwidth="1.0",shape="oval",style="filled"];
+	n85[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">watch,list,get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">ipreservations</td>
+		<td align="left">*</td>
+		<td align="left">list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">blockaffinities,ipamblocks,ipamhandles</td>
+		<td align="left">*</td>
+		<td align="left">get,list,create,update,delete,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">ippools</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">hostendpoints</td>
+		<td align="left">*</td>
+		<td align="left">get,list,create,update,delete</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">clusterinformations</td>
+		<td align="left">*</td>
+		<td align="left">get,list,create,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">kubecontrollersconfigurations</td>
+		<td align="left">*</td>
+		<td align="left">get,create,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n186[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">serviceaccounts/token</td>
+		<td align="left">canal</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods,nodes,namespaces</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">discovery.k8s.io</td>
+		<td align="left">endpointslices</td>
+		<td align="left">*</td>
+		<td align="left">watch,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints,services</td>
+		<td align="left">*</td>
+		<td align="left">watch,list,get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">networking.k8s.io</td>
+		<td align="left">networkpolicies</td>
+		<td align="left">*</td>
+		<td align="left">watch,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods,namespaces,serviceaccounts</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods/status</td>
+		<td align="left">*</td>
+		<td align="left">patch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">globalfelixconfigs,felixconfigurations,bgppeers,globalbgpconfigs,bgpconfigurations,ippools,ipreservations,ipamblocks,globalnetworkpolicies,globalnetworksets,networkpolicies,networksets,clusterinformations,hostendpoints,blockaffinities,caliconodestatuses</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">ippools,felixconfigurations,clusterinformations</td>
+		<td align="left">*</td>
+		<td align="left">create,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">caliconodestatuses</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">crd.projectcalico.org</td>
+		<td align="left">bgpconfigurations,bgppeers</td>
+		<td align="left">*</td>
+		<td align="left">create,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n115[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left"></td>
+		<td align="left"></td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n53[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes/status</td>
+		<td align="left">*</td>
+		<td align="left">patch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n136[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n104[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">metrics.k8s.io</td>
+		<td align="left">pods,nodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n119[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes,persistentvolumeclaims,configmaps</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints,persistentvolumes,pods</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">storageclasses</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n193[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">authorization.k8s.io</td>
+		<td align="left">selfsubjectaccessreviews,selfsubjectrulesreviews</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">authentication.k8s.io</td>
+		<td align="left">selfsubjectreviews</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n168[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">certificates.k8s.io</td>
+		<td align="left">certificatesigningrequests/nodeclient</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n171[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">certificates.k8s.io</td>
+		<td align="left">certificatesigningrequests/selfnodeclient</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n174[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims,persistentvolumes</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">volumeattachments</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">csidrivers</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">csinodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n65[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">certificates.k8s.io</td>
+		<td align="left">certificatesigningrequests</td>
+		<td align="left">*</td>
+		<td align="left">delete,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">certificates.k8s.io</td>
+		<td align="left">certificatesigningrequests/approval,certificatesigningrequests/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">certificates.k8s.io</td>
+		<td align="left">signers</td>
+		<td align="left">kubernetes.io/kube-apiserver-client-kubelet</td>
+		<td align="left">approve</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">certificates.k8s.io</td>
+		<td align="left">signers</td>
+		<td align="left">kubernetes.io/kube-apiserver-client,kubernetes.io/kube-apiserver-client-kubelet,kubernetes.io/kubelet-serving,kubernetes.io/legacy-unknown</td>
+		<td align="left">sign</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">authorization.k8s.io</td>
+		<td align="left">subjectaccessreviews</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n196[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">rbac.authorization.k8s.io</td>
+		<td align="left">clusterroles</td>
+		<td align="left">*</td>
+		<td align="left">escalate,get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n57[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">cronjobs</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">jobs</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">cronjobs/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">cronjobs/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">delete,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n240[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">daemonsets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">daemonsets/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">daemonsets/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,list,patch,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods/binding</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">apps</td>
+		<td align="left">controllerrevisions</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n107[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">deployments</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">deployments/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">deployments/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">replicasets</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n256[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">deployments</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">replicasets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">replicationcontrollers</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">policy</td>
+		<td align="left">poddisruptionbudgets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">apps</td>
+		<td align="left">statefulsets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">policy</td>
+		<td align="left">poddisruptionbudgets/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">*</td>
+		<td align="left">*/scale</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n217[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods,services</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints/restricted</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n69[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes,pods,services</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">services/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">discovery.k8s.io</td>
+		<td align="left">endpointslices</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n221[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints,services</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">services/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">discovery.k8s.io</td>
+		<td align="left">endpointslices</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n124[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims</td>
+		<td align="left">*</td>
+		<td align="left">create,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n111[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">storageclasses</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints,services</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n200[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">delete,get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n128[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">autoscaling</td>
+		<td align="left">horizontalpodautoscalers</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">autoscaling</td>
+		<td align="left">horizontalpodautoscalers/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">*</td>
+		<td align="left">*/scale</td>
+		<td align="left">*</td>
+		<td align="left">get,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">metrics.k8s.io</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">custom.metrics.k8s.io</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">get,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">external.metrics.k8s.io</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">get,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n92[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">jobs</td>
+		<td align="left">*</td>
+		<td align="left">get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">jobs/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">jobs/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,list,patch,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n158[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">kube-apiserver-legacy-service-account-token-tracking</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets</td>
+		<td align="left">*</td>
+		<td align="left">delete,patch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n73[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">namespaces</td>
+		<td align="left">*</td>
+		<td align="left">delete,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">namespaces/finalize,namespaces/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">delete,deletecollection,get,list</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n162[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">delete,get,list,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">delete,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">networking.k8s.io</td>
+		<td align="left">clustercidrs</td>
+		<td align="left">*</td>
+		<td align="left">create,get,list,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n178[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumes</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumes/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">storageclasses</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">services</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n81[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">delete,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods/status</td>
+		<td align="left">*</td>
+		<td align="left">patch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n96[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n132[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n244[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">replicasets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">replicasets/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">replicasets/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,list,patch,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n182[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">replicationcontrollers</td>
+		<td align="left">*</td>
+		<td align="left">get,list,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">replicationcontrollers/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">replicationcontrollers/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,list,patch,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n146[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">resourcequotas/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n150[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps</td>
+		<td align="left">*</td>
+		<td align="left">create,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n154[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes/status</td>
+		<td align="left">*</td>
+		<td align="left">patch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n248[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">serviceaccounts</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n225[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">services</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">services/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n139[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">apps</td>
+		<td align="left">statefulsets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">apps</td>
+		<td align="left">statefulsets/status</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">apps</td>
+		<td align="left">statefulsets/finalizers</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">apps</td>
+		<td align="left">controllerrevisions</td>
+		<td align="left">*</td>
+		<td align="left">create,delete,get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims</td>
+		<td align="left">*</td>
+		<td align="left">create,get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims</td>
+		<td align="left">*</td>
+		<td align="left">delete,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n252[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">batch</td>
+		<td align="left">jobs</td>
+		<td align="left">*</td>
+		<td align="left">delete,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n204[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n77[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints,services,pods,namespaces</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">discovery.k8s.io</td>
+		<td align="left">endpointslices</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n61[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left"></td>
+		<td align="left"></td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left">/api,/api/*,/apis,/apis/*,/healthz,/livez,/openapi,/openapi/*,/readyz,/version,/version/</td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n229[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">coordination.k8s.io</td>
+		<td align="left">leases</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">coordination.k8s.io</td>
+		<td align="left">leases</td>
+		<td align="left">kube-controller-manager</td>
+		<td align="left">get,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets,serviceaccounts</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets</td>
+		<td align="left">*</td>
+		<td align="left">delete</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">configmaps,namespaces,secrets,serviceaccounts</td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">secrets,serviceaccounts</td>
+		<td align="left">*</td>
+		<td align="left">update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">authentication.k8s.io</td>
+		<td align="left">tokenreviews</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">authorization.k8s.io</td>
+		<td align="left">subjectaccessreviews</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">serviceaccounts/token</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n232[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints,services</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n210[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">coordination.k8s.io</td>
+		<td align="left">leases</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">coordination.k8s.io</td>
+		<td align="left">leases</td>
+		<td align="left">kube-scheduler</td>
+		<td align="left">get,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods</td>
+		<td align="left">*</td>
+		<td align="left">delete,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">bindings,pods/binding</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">pods/status</td>
+		<td align="left">*</td>
+		<td align="left">patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">replicationcontrollers,services</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">extensions,apps</td>
+		<td align="left">replicasets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">apps</td>
+		<td align="left">statefulsets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">policy</td>
+		<td align="left">poddisruptionbudgets</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims,persistentvolumes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">authentication.k8s.io</td>
+		<td align="left">tokenreviews</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">authorization.k8s.io</td>
+		<td align="left">subjectaccessreviews</td>
+		<td align="left">*</td>
+		<td align="left">create</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">csinodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">namespaces</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">csidrivers</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">csistoragecapacities</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n100[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left"></td>
+		<td align="left"></td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left">/healthz,/healthz/*,/livez,/livez/*,/metrics,/metrics/slis,/readyz,/readyz/*</td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n89[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">certificates.k8s.io</td>
+		<td align="left">certificatesigningrequests</td>
+		<td align="left">*</td>
+		<td align="left">create,get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n189[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">endpoints,services</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">nodes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">events.k8s.io,core</td>
+		<td align="left">events</td>
+		<td align="left">*</td>
+		<td align="left">create,patch,update</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">discovery.k8s.io</td>
+		<td align="left">endpointslices</td>
+		<td align="left">*</td>
+		<td align="left">list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n213[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left"></td>
+		<td align="left"></td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left">/healthz,/livez,/readyz,/version,/version/</td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n236[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left"></td>
+		<td align="left"></td>
+		<td align="left">*</td>
+		<td align="left">get</td>
+		<td align="left">/.well-known/openid-configuration,/.well-known/openid-configuration/,/openid/v1/jwks,/openid/v1/jwks/</td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n143[fillcolor="#DCDCDC",fontsize="10",label=<	
+		<table border="0" align="left">
+		  <tr>
+			<td align="left" border="1" sides="b">ApiGroup</td>
+			<td align="left" border="1" sides="b">Kind</td>
+			<td align="left" border="1" sides="b">Names</td>
+			<td align="left" border="1" sides="b">Verbs</td>
+			<td align="left" border="1" sides="b">NonResourceURI</td>
+		  </tr>
+		  
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumes</td>
+		<td align="left">*</td>
+		<td align="left">get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">storage.k8s.io</td>
+		<td align="left">storageclasses</td>
+		<td align="left">*</td>
+		<td align="left">get,list,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+	  <tr>
+		<td align="left">core</td>
+		<td align="left">persistentvolumeclaims</td>
+		<td align="left">*</td>
+		<td align="left">get,list,patch,update,watch</td>
+		<td align="left"></td>
+	  </tr>
+
+		</table>
+>,penwidth="1.0",shape="note"];
+	n165->n164[dir="back"];
+	n62->n59[dir="back"];
+	n62->n191[dir="back"];
+	n62->n211[dir="back"];
+	n38->n35[dir="back"];
+	n38->n39[dir="back"];
+	n38->n43[dir="back"];
+	n38->n87[dir="back"];
+	n38->n134[dir="back"];
+	n38->n166[dir="back"];
+	n116->n113[dir="back"];
+	n101->n98[dir="back"];
+	n42->n39[dir="back"];
+	n42->n43[dir="back"];
+	n42->n169[dir="back"];
+	n237->n234[dir="back"];
+	n214->n211[dir="back"];
+	n175->n172[dir="back"];
+	n10->n6[dir="back"];
+	n86->n83[dir="back"];
+	n54->n51[dir="back"];
+	n54->n184[dir="back"];
+	n66->n63[dir="back"];
+	n197->n194[dir="back"];
+	n78->n75[dir="back"];
+	n58->n55[dir="back"];
+	n241->n238[dir="back"];
+	n108->n105[dir="back"];
+	n257->n254[dir="back"];
+	n218->n215[dir="back"];
+	n70->n67[dir="back"];
+	n222->n219[dir="back"];
+	n125->n122[dir="back"];
+	n112->n109[dir="back"];
+	n201->n198[dir="back"];
+	n129->n126[dir="back"];
+	n93->n90[dir="back"];
+	n233->n230[dir="back"];
+	n207->n206[dir="back"];
+	n50->n102[dir="back"];
+	n159->n156[dir="back"];
+	n121->n117[dir="back"];
+	n74->n71[dir="back"];
+	n163->n160[dir="back"];
+	n179->n176[dir="back"];
+	n82->n79[dir="back"];
+	n97->n94[dir="back"];
+	n133->n130[dir="back"];
+	n245->n242[dir="back"];
+	n183->n180[dir="back"];
+	n147->n144[dir="back"];
+	n151->n148[dir="back"];
+	n155->n152[dir="back"];
+	n249->n246[dir="back"];
+	n226->n223[dir="back"];
+	n140->n137[dir="back"];
+	n253->n250[dir="back"];
+	n205->n202[dir="back"];
+	n5->n2[dir="back"];
+	n14->n11[dir="back"];
+	n14->n24[dir="back"];
+	n14->n227[dir="back"];
+	n190->n187[dir="back"];
+	n15->n11[dir="back"];
+	n15->n16[dir="back"];
+	n15->n141[dir="back"];
+	n15->n208[dir="back"];
+	n84->n85;
+	n185->n186;
+	n114->n115;
+	n52->n53;
+	n135->n136;
+	n103->n104;
+	n118->n119;
+	n192->n193;
+	n167->n168;
+	n170->n171;
+	n173->n174;
+	n64->n65;
+	n195->n196;
+	n56->n57;
+	n239->n240;
+	n106->n107;
+	n255->n256;
+	n216->n217;
+	n68->n69;
+	n220->n221;
+	n123->n124;
+	n110->n111;
+	n199->n200;
+	n127->n128;
+	n91->n92;
+	n157->n158;
+	n72->n73;
+	n161->n162;
+	n177->n178;
+	n80->n81;
+	n95->n96;
+	n131->n132;
+	n243->n244;
+	n181->n182;
+	n145->n146;
+	n149->n150;
+	n153->n154;
+	n247->n248;
+	n224->n225;
+	n138->n139;
+	n251->n252;
+	n203->n204;
+	n76->n77;
+	n60->n61;
+	n228->n229;
+	n231->n232;
+	n209->n210;
+	n99->n100;
+	n88->n89;
+	n188->n189;
+	n212->n213;
+	n235->n236;
+	n142->n143;
+	n83->n84;
+	n184->n185;
+	n51->n52;
+	n113->n114;
+	n164->n114;
+	n134->n135;
+	n87->n88;
+	n166->n167;
+	n169->n170;
+	n206->n188;
+	n102->n103;
+	n117->n118;
+	n191->n192;
+	n172->n173;
+	n63->n64;
+	n194->n195;
+	n55->n56;
+	n238->n239;
+	n105->n106;
+	n254->n255;
+	n215->n216;
+	n67->n68;
+	n219->n220;
+	n122->n123;
+	n109->n110;
+	n198->n199;
+	n126->n127;
+	n90->n91;
+	n156->n157;
+	n71->n72;
+	n160->n161;
+	n176->n177;
+	n79->n80;
+	n94->n95;
+	n130->n131;
+	n242->n243;
+	n180->n181;
+	n144->n145;
+	n148->n149;
+	n152->n153;
+	n246->n247;
+	n223->n224;
+	n137->n138;
+	n250->n251;
+	n202->n203;
+	n75->n76;
+	n59->n60;
+	n227->n228;
+	n230->n231;
+	n208->n209;
+	n98->n99;
+	n187->n188;
+	n211->n212;
+	n234->n235;
+	n141->n142;
+	{rank=same; n3;n7;n12;n17;n21;n25;n29;n32;n36;n40;n44;n48;n52;n56;n60;n64;n68;n72;n76;n80;n84;n88;n91;n95;n99;n103;n106;n110;n114;n118;n123;n127;n131;n135;n138;n142;n145;n149;n153;n157;n161;n114;n167;n170;n173;n177;n181;n185;n188;n192;n195;n199;n203;n188;n209;n212;n216;n220;n224;n228;n231;n235;n239;n243;n247;n251;n255;};
+	
+}
